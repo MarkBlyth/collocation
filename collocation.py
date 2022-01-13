@@ -10,6 +10,8 @@ class _Collocation:
         pass
 
     def __init__(self, mesh, smoothness):
+        self.low = mesh[0]
+        self.high = mesh[-1]
         self._mesh = mesh
         self._smoothness = smoothness
         self._finite_elements = self._FEClass(mesh)
