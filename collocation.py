@@ -137,3 +137,14 @@ class KroghBVP(_OrthoCollocationBVP):
 
 class KroghCBCCollocation(_CBCCollocation):
     _FEClass = KroghFiniteElements
+
+class KroghCustomCollocation(_Collocation):
+    _FEClass = KroghFiniteElements
+
+    @abc.abstractmethod
+    def _collocation_condition(self, coeffs, reference):
+        pass
+
+    @abc.abstractmethod
+    def _continuity_errors(self, coeffs):
+        pass
