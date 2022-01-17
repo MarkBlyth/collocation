@@ -40,7 +40,7 @@ class _Collocation:
         return self._finite_elements(ts, coeffs)
 
     def evaluate_derivatives(self, ts, coeffs, derivatives):
-        return self._finite_elements.derivatives(ts, coeffs, derivatives)
+        return self._finite_elements.derivatives(ts, coeffs, derivatives)[derivatives]
 
     @abc.abstractmethod
     def _collocation_condition(self, coeffs, reference):

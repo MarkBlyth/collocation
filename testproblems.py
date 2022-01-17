@@ -30,7 +30,7 @@ def cbc_coll():
     _, ax = plt.subplots()
     ax.plot(ts, ys, label="Signal")
     ax.plot(plotts, discretisor.evaluate_solution(plotts, soln.x), label="Model")
-    ax.plot(plotts, discretisor.evaluate_derivatives(plotts, soln.x, 1)[1], label="Gradient")
+    ax.plot(plotts, discretisor.evaluate_derivatives(plotts, soln.x, 1), label="Gradient")
     ax.scatter(mesh, discretisor.evaluate_solution(mesh, soln.x))
     ax.legend()
     plt.show()
